@@ -1,0 +1,41 @@
+//10. Modifique o algoritmo da média do aluno para informar
+//a) APROVADO ............ caso a nota final esteja no intervalo [10, 7]
+//b) RECUPERAÇÃO...... caso a nota final esteja no intervalo [5, 7)
+//c) REPROVADO .......... caso a nota final esteja no intervalo [0, 5)
+
+#include <stdio.h>
+#include <math.h>
+
+int main (){
+	
+	//OBS : tentei usar numeros normais como o 7 o 10 normal mas acabou bugando o sistema e o resultando não parecendo
+	
+	float num;
+	float dum;
+	float tum;
+	
+	printf("\ndigite a primeira nota: ");
+	scanf("%f",&num);
+	
+	printf("\ndigite a segunda nota: ");
+	scanf("%f",&dum);
+	
+	printf("\ndigite a terceira nota: ");
+	scanf("%f",&tum);
+	
+	float  resto = num+dum+tum;
+	
+	float media = resto/3;
+	
+	if(media >= 70  & media <= 100){
+		printf("APROVADO");
+		
+	}else if(media <= 69 & media >= 50){
+		printf("RECUPERACAO");
+			
+    }else if(media  <= 49  & media >= 0 ){
+    	printf("REPROVADO");
+	}
+	
+	return 0;
+}
