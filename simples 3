@@ -1,0 +1,27 @@
+//Escrever um algoritmo para ler o salário mensal e o percentual de reajuste.
+//Calcular e escrever o valor do novo salário.
+
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+	
+	float sal;
+	float por;
+	
+	printf("Digite o valor do salario mensal: ");
+	scanf("%f",&sal);
+	
+	printf("Digite o percentual de reajuste: ");
+	scanf("%f",&por);
+	
+	float resto = sal*por;
+	
+	float div = resto/100;
+	
+	float reajustado = div+sal;
+	
+	printf("O novo salario reajustado e: %.00f",reajustado);
+	
+	return 0;
+}
