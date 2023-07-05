@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define tamanho 3
+
+int main(int argc, char *argv[]) {
+	
+	int matriz [tamanho][tamanho];
+	int linha = 0;
+	int coluna = 0;
+	
+	for(linha = 0; linha <tamanho ; linha++){
+		
+		for(coluna =0; coluna <tamanho; coluna++){
+			
+			matriz [linha][coluna] = 0 ;
+			
+		}
+		
+	}
+	
+		for(linha = 0; linha <tamanho ; linha++){
+		for(coluna =0; coluna <tamanho; coluna++){
+		fflush(stdin);	
+		printf("\ndigite o numero da %d linha e da o %d coluna: ",linha+1,coluna+1);
+		scanf("%d",&matriz[linha][coluna]);
+		}
+		
+	}
+	
+	do{
+		coluna = 0;
+		printf("\nDigite o numero da coluna desejada: ");
+		scanf("%d",&coluna);
+		if(coluna < 1 || coluna > tamanho){
+		printf("\nnumero da linha invalido. informe entre 0 e %d",tamanho);	
+		system("pause");
+		}
+		
+	}while(coluna < 1 || coluna > tamanho);
+	
+	for(linha =0; linha <tamanho; linha++){
+	printf("\no numero informado da %d linha e da %d coluna eh: %d",linha+1,coluna,matriz[linha][coluna-1]);
+		
+	}
+	printf("\n\n");
+	system("pause");
+	return 0;
+}
