@@ -1,0 +1,25 @@
+//2. Desenvolver um programa que armazene as alturas de 5 atletas em um vetor.
+
+
+
+
+#include <stdio.h>
+
+
+
+int main(){
+	
+	int vet [5];
+	int i;
+	
+	for(i=0; i<=4; i++){
+		printf("\nDigite a %i altura do atleta: ",i+1);
+		scanf("%i",&vet[i]);
+	}
+	
+	for(i=0; i<=4; i++){
+		printf("\nAs alturas dos atletas sao: %i",vet[i]);
+	}
+		
+	return 0;
+}
