@@ -1,0 +1,88 @@
+//Escrever um programa que leia os elementos para uma matriz A[4][4] e
+//para uma matriz B[4][4], gere e imprima uma matriz SOMA[4][4].
+//Todos do tipo inteiro.
+
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[]) {
+	
+	int matA [4][4];
+	int i = 0;
+	int j = 0;
+	
+	for(i=0; i<4; i++){
+	for(j=0; j<4; j++){
+		
+	matA[i][j] = 0;
+			
+     	}				
+    }
+		
+	int matB [4][4];
+	int x = 0;
+	int y = 0;
+	
+	for(x=0; x<4; x++){
+	for(y=0; y<4; y++){
+		
+	matB[x][y] = 0;
+			
+     	}				
+    }
+	
+	int soma [4][4];
+	int o = 0;
+	int t = 0;
+	
+	for(o=0; o<4; o++){
+	for(t=0; t<4; t++){
+		
+	soma[o][t] = 0;
+			
+     	}				
+    }
+	
+	
+	for(i=0; i<4; i++){
+	for(j=0; j<4; j++){
+	fflush(stdin);		
+	printf("Digite a PRIMEIRA MATRIZ linha %d e coluna %d: ",i+1,j+1);
+	scanf("%d",&matA[i][j]);
+     	}				
+    }	
+
+	
+	for(x=0; x<4; x++){
+	for(y=0; y<4; y++){
+	fflush(stdin);		
+	printf("Digite a SEGUNDA MATRIZ linha %d e coluna %d: ",x+1,y+1);
+	scanf("%d",&matB[x][y]);
+     	}				
+    }	
+
+	for(o=0; o<4; o++){
+	for(t=0; t<4; t++){
+		
+	soma[o][t] = matB[x][y]*matA[i][j];
+			
+     	}				
+    }
+	
+	printf("\n");
+	
+	for(o=0; o<4; o++){
+	for(t=0; t<4; t++){
+
+	printf("%d",soma[o][t]);
+
+     	}	
+	printf("\n");	 			
+    }	
+	
+	printf("\n");
+	
+	system("pause")	;
+	return 0;
+}
