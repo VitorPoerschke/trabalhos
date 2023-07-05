@@ -1,0 +1,32 @@
+//4. Escrever um algoritmo para ler uma temperatura em graus Celsius ou Fahrenheit
+//(a entrada dos dados deve definir qual o formato). Posteriormente calcule a
+//conversão de Celsius/Fahrenheit ou vice-versa.
+
+
+#include <stdio.h>
+#include <math.h>
+
+
+int main(){
+	 
+	float num;
+	int faz;
+	
+	printf("\ndigite os dados para saber a conversao: ");
+	scanf("%f",&num);
+	
+	printf("\nPara 1 se o numero digitado foi celcius e 2 se foi Fahrenheit : ");
+    scanf("%i",&faz);
+
+    if( faz == 2 ){   	
+   	 	float dumbo = (num -32 ) / 1.8;
+    printf("\nA  conversao para celcius fica: %.000f", dumbo); 	
+    
+	}else if( faz == 1){
+		float ratatoi = (num * 1.8)	+ 32;
+	printf("\nA conversao para fahrenheit fica: %.000f", ratatoi);
+	}
+   
+	
+return 0;	
+}
