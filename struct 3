@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct DadosAluno{
+	float notas[2]; //Vetor que armazena as duas notas
+	int idade;
+}dados;
+
+int main() {
+	int i;
+	
+	printf("\n *** RECEBENDO DADOS ***\n");
+	
+	for(i=0; i<2; i++){
+		printf("\nInforme a %d nota......: ", i+1);
+		scanf("%f", &dados.notas[i]);
+	}
+	
+	printf("\nInforme a idade do aluno: ");
+	scanf("%d", &dados.idade);
+	
+	printf("\n\nMedia do aluno........: %.2f", (dados.notas[0]+dados.notas[1])/2);
+	printf("\nIdade informada.......: %d anos", dados.idade);
+	
+	printf("\n\n");
+	system("pause");
+	return (0);
+}
