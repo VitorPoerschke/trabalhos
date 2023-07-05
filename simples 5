@@ -1,0 +1,40 @@
+//Escrever um algoritmo para ler as dimensões de uma cozinha (comprimento,
+//largura e altura), calcular e escrever a quantidade de caixas de azulejos
+//necessárias para cobrir todas as paredes (considere que não será descontada a
+//área ocupada por portas e janelas). Cada caixa de azulejos possui 1,5 metros
+//quadrados de azulejos.
+
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+	
+	
+	float comprimento;
+	float largura;
+	float altura;
+	
+	
+	
+	printf("Qual e o comprimento da cozinha: ");
+	scanf("%f",&comprimento);
+	
+ 	printf("qual e a largura da cozinha: ");
+ 	scanf("%f",&largura);
+ 	
+ 	printf("Qual e a altura da cozinha: ");
+	scanf("%f",&altura);
+	
+	
+	float area = comprimento*largura;	
+	float teto = area;
+	float parum = largura*altura;
+	float pardos = comprimento*altura;
+	float total = (area+teto)+(parum*2+pardos*2);
+	float azul = total/1.5;
+	printf("\nA quantidade de caixa de azulejos sao: %.00f",azul);
+	
+	
+	
+  return 0;	
+}
