@@ -1,0 +1,33 @@
+//1. Faça um algoritmo que receba o salário-base de um funcionário, calcule e mostre
+//o salário a receber, sabendo-se que este funcionário tem gratificação de 5% sobre
+//o salário-base e paga imposto de 7% também sobre o salário-base, se o salário-
+//base do empregado for superior a R$ 1.900,00. Mostrar no final o valor do
+//salário-base, valor da gratificação, o valor debito relativo aos impostos e o
+//salário final do empregado.
+
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+	
+	float sal; 
+	
+	printf("Digite o salario base do funcionario: ");
+	scanf("%f",&sal);
+	
+	float real = sal*5;
+	float resto = real/100;
+	float justo = sal+resto;
+	
+	float imp = sal*7;
+	float digi = imp/100;
+	float injusto = sal-digi;
+	
+	if(sal > 1900){
+		printf("\nO salario base e: %.00f",sal);
+		printf("\nO salario com gratificacao e: %.00f",justo);
+		printf("\nO salario com os impostos e: %.00f",injusto);
+	}
+			
+return 0;	
+}
