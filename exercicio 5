@@ -1,0 +1,65 @@
+//5. Foi realizada uma pesquisa entre 500 habitantes de certa região. De cada
+//habitante, foram coletados os dados: idade, sexo, salário e número de
+//filhos.
+
+// Criar uma estrutura de dados adequada para armazenar estas
+//informações e fazer uma função que receba e armazene as informações
+//digitadas pelo usuário na estrutura de dados criada.
+
+// Fazer também uma segunda função que calcula a média do salário dos habitantes,
+//apresentando-a ao final do programa.
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <locale.h>
+
+struct habitante{
+	float salario;
+	int numerof;
+	int idade;
+	char sexo;	
+}dados;
+
+float media(int *m){
+	
+	
+}
+
+struct habitante digitado, *ptr_digitado;
+
+int main(){
+	setlocale(LC_ALL, "Portuguese");
+	
+	int numf,id,hab,i,j;
+	float sal;
+	char sex;
+	
+	printf("\n\n[------------*************************************--------------]\n");
+	printf("[------------+        (ATIVIDADE 5) HABITANTES        +---------------]\n");
+	printf("[--------------*************************************----------------]\n\n");
+	
+	printf("Digite o numero de habitantes de 0 a 500: ");
+	scanf("%i",&hab);
+	
+	printf("Digite o salario: ");
+	fflush(stdin);
+	scanf("%f",ptr_digitado->salario);
+	
+	printf("Digite o numero de filhos: ");
+	fflush(stdin);	
+	scanf("%i",ptr_digitado->numerof);
+	
+	printf("Digite a idade: ");
+	fflush(stdin);
+	scanf("%i",ptr_digitado->idade);
+	
+	printf("Digite o sexo: ");
+	fflush(stdin);
+	scanf("%s",ptr_digitado->sexo);
+    
+	
+	system("pause");
+	return 0;
+}
