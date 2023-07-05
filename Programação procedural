@@ -1,0 +1,116 @@
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <locale.h>
+
+
+struct conta{
+	char nome[30];
+	int numconta;
+	int senha;	
+}dados[5];
+
+int fillconta(int x){
+
+	for(x=0;x<5;x++){
+	printf("\nQual é o nome do correntista %i*: ",x+1);
+	gets(dados[x].nome);
+	fflush(stdin);	
+	printf("\nQual é o numero da conta: ");
+	scanf("%i",&dados[x].numconta);
+	fflush(stdin);	
+	printf("\nQual é a senha da conta: ");
+	scanf("%i",&dados[x].senha);
+	fflush(stdin);	
+  }
+return (0);
+
+}
+
+int mostraconta(int m){
+	for(m=0;m<5;m++){
+	printf("\nNome do correntista: %s",dados[m].nome);
+	printf("\nNumero da conta %i",dados[m].numconta);
+	printf("\nSenha da conta: %i",dados[m].senha);
+  }
+	
+return (0);	
+}
+
+int validaconta(int t){
+	
+	int retorno,j;
+	char name[30];
+	int password;
+	
+	printf("\nDigite o nome para a validação: ");
+	gets(name);
+	fflush(stdin);	
+	printf("\nDigite a senha para a validação: ");
+	scanf("%i",&password);
+	fflush(stdin);	
+	
+	for(t=0; t<5; t++){	
+	for(j=0; j<30; j++){	
+	retorno = strcmp(dados[t].nome,name);
+    }
+	if(retorno == 0 && password==dados[t].senha){
+	printf("\nBem-vindo ao sistema %s!.",dados[t].nome);
+    } 
+    
+	else if(retorno!=0 && password==dados[t].senha){
+		printf("\n!!USUARIO INEXISTENTE!!");
+		
+	}else if(retorno==0 && password!=dados[t].senha){
+		printf("Usuário: %s\n",dados[t].nome);
+		printf("Senha: INVALIDA!");	
+	}
+	
+	
+}	
+
+return (0);
+}
+	
+
+int main(){
+	setlocale(LC_ALL, "Portuguese");
+					
+	printf("[------------*************************************---------------]\n");
+	printf("[------------+    REGISTRAR CONTAS BANCARIAS     +---------------]\n");
+	printf("[------------*************************************---------------]\n");
+
+	int i=0;//parte 1 recolher os 5 nomes concluida.
+	fillconta(i);
+	
+	printf("\n");
+					
+	printf("[------------*************************************---------------]\n");
+	printf("[------------+          DADOS BANCARIOS          +---------------]\n");
+	printf("[------------*************************************---------------]\n");
+
+	int s=0;//parte 2 mostrar os dados concluida.
+	mostraconta(s);
+	
+	printf("\n\n");
+						
+	printf("[------------*************************************---------------]\n");
+	printf("[------------+        VALIDAÇÃO DA CONTA         +---------------]\n");
+	printf("[------------*************************************---------------]\n");
+	
+	int p=0;//parte 3 validar os dados concluido.
+	validaconta(p);
+	
+	printf("\n\n");
+	printf("[------------*************************************---------------]\n");
+	printf("[------------+          FIM DO PROGRAMA          +---------------]\n");
+	printf("[------------*************************************---------------]\n");	
+	printf("\n");
+	
+	system("pause");
+		
+return 0;	
+}
+
+
