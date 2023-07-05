@@ -1,0 +1,56 @@
+//4. Criar uma estrutura que contenha as informações sobre um CD de
+//música, sendo as informações: Nome da banda, dia do lançamento do
+//CD, mês do lançamento do CD, ano do lançamento do CD, valor do CD,
+//número de membros da banda, produtora do CD. Essas informações
+//deverão ser registradas através de uma função.
+
+
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <locale.h>
+
+struct rock{
+	char produtora[50];
+	char banda[30];
+};
+
+struct jogo{
+	int membros;
+	int dia;
+	int mes;
+	int ano;	
+};
+
+char atribui(struct rock *p){
+	
+	strcpy((*p).produtora,"Roadrunner Records");
+	strcpy((*p).banda,"slipknot");
+}
+
+int numero(struct jogo *x){
+	
+	(*x).membros = 9;
+	(*x).dia = 20;
+	(*x).mes = 7;
+	(*x).ano = 1995;
+}
+
+int main(){
+	setlocale(LC_ALL, "Portuguese");
+	
+	struct rock p1;
+	atribui (&p1);
+	printf("Produta: %s\n",p1.produtora);  
+	printf("Banda: %s\n",p1.banda);
+	struct jogo x1;
+	numero (&x1);
+	printf("Membros: %i\n",x1.membros);
+	printf("Dia: %i\n",x1.dia);
+	printf("Mes: %i\n",x1.mes);
+	printf("ano: %i\n",x1.ano);
+	
+	system("pause");
+ return 0;	
+}
