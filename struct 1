@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct dadoscad{
+	char nome[30];
+	int idade;
+}cadastro[10];
+
+int main() {
+	int i, j, pesquisa;
+	//Inicializando as variáveis
+	for(i=0; i<10; i++){
+		for(j=0; j<30; j++){
+			cadastro[i].nome[j]=' ';
+		}
+		cadastro[i].idade=0;
+	}
+	//Entrada de dados
+	for(i=0; i<3; i++){
+		printf("\n\nInforme o %do nome: ", i+1);
+		gets(cadastro[i].nome);
+		printf("Informe a %da idade: ", i+1);
+		scanf("%d", &cadastro[i].idade);
+		fflush(stdin);
+	}
+	
+	printf("\n\nInforme a idade a pesquisar: ");
+	scanf("%d", &pesquisa);
+	printf("\n\n *** INICIANDO A PESQUISA ***\n");
+	//Se idade pesquisada == idade cadastrada, então mostra nome e idade
+	for(i=0; i<3; i++){
+		if(pesquisa==cadastro[i].idade){
+			printf("\n\n%do nome: %s", i+1, cadastro[i].nome);
+			printf("\nIdade de %s: %d", cadastro[i].nome, cadastro[i].idade);
+		}
+	}
+	
+	printf("\n\n");
+	system("pause");	
+	return (0);
+}
