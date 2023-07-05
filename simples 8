@@ -1,0 +1,18 @@
+//1. Inicializar um vetor chamado limpeza de 15 inteiros com o valor zero,
+//apresentando ao final o conteúdo de cada índice.
+
+#include <stdio.h>
+
+int main(){
+		
+		int limpeza [15];
+		int i;
+		
+		for(i=0; i<=15; i++){
+			limpeza[i] = 0;	
+		printf("\nO conteudo do indice %i e: %i",i+1 ,limpeza[i]);
+        } 
+
+		
+	return 0;	
+}
