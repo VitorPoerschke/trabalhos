@@ -1,0 +1,38 @@
+//Fazer um programa que receba dois valores e,
+//utilizando ponteiros, retorne o maior e o menor
+//valor. Salienta-se a necessidade de existir um
+//controle sobre os valores iguais.
+
+#include <stdio.h>
+#include <math.h>
+#include <locale.h>
+
+int main(){
+		setlocale(LC_ALL, "Portuguese");
+ 
+	int *p1,*p2,num1,num2;
+
+
+	printf("\nDigite o primeiro valor: ");
+	scanf("%i",&num1);
+	
+	p1 = &num1; 
+
+    printf("\Digite o segundo valor: ");
+    scanf("%i",&num2);
+    
+    p2 = &num2;
+
+	if(*p1 > *p2){
+	printf("\nO maior valor é : %i",*p1);	
+	printf("\nO menor valor é : %i",*p2);			
+	}else if(*p1 < *p2){
+	printf("\nO maior valor é : %i",*p2);	
+	printf("\nO menor valor é : %i",*p1);
+    }else{
+	printf("\nSão iguais não existe um maior valor ou menor valor");	
+    }
+
+
+	return (0);
+    }
