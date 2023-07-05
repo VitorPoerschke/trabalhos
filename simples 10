@@ -1,0 +1,22 @@
+//3. Inicializar um vetor com os valores 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 e depois
+//apresentar os respectivos valores através do uso do vetor.
+
+
+#include <stdio.h>
+
+int main(){
+	
+	int vet [] = {1,2,3,4,5,6,7,8,9,10};
+	
+	
+	for(int i = 0; i < 10; i++){
+		printf("\nvetor: %i",vet[i]);
+	}
+	
+	
+	
+	
+	
+	
+return 0;	
+}
