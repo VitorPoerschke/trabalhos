@@ -1,0 +1,49 @@
+//Estendendo o exercício 1, incluir o campo sexo de 10 e imprimir a relação de
+//pessoas que possuem o sexo correspondente ao informado pelo usuário.
+
+//1. Faça um programa que leia o nome e a idade de 10 pessoas. Em seguida, solicite
+//ao usuário que informe uma idade e imprima os nomes das pessoas que possuem
+//a idade informada.
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <locale.h>
+
+int main(){
+	
+	setlocale(LC_ALL, "Portuguese");
+	
+	printf("[----------------------------------------------------------------]\n");
+	printf("[--------------------LEITOR DE NOME E IDADE----------------------]\n");
+	printf("[----------------------------------------------------------------]\n");
+	 
+	struct formulario{//criando uma estrututura para receber os dados.
+		char nome[50];//coloquei dentro do main porque é questão de gosto mesmo.
+		int num;
+		char sexo[20];	  //lembrando que da para colocar a estrutura fora do main.	
+	}dados[10];       //aqui eu coloquei 10 porque eu quero guardar os dados de 10 pessoas.
+	
+	int i;
+	
+	for(i=0; i<10; i++){
+	printf("\nDigite o nome da pessoa %i do formulario: ",i+1);
+	gets(dados[i].nome);
+	fflush(stdin);	
+	printf("\nDigite a idade da pessoa %i do formulario: ",i+1);
+	scanf("%i",&dados[i].num);	
+	fflush(stdin);
+	printf("\nDigite o sexo da pessoa %i do formulario feminino ou masculino: ",i+1);
+	gets(dados[i].sexo);
+	fflush(stdin);	
+	}
+
+	for(i=0; i<10; i++){
+		printf("\nO nome da pessoa %i é: %s",i+1,dados[i].nome);
+		printf("\nA idade da pessoa %i é: %i",i+1,dados[i].num);
+		printf("\nO sexo da %i pessoa é: %s",i+1,dados[i].sexo);	
+	}
+	printf("\n\n");	
+	system("pause");
+	return 0;
+}
