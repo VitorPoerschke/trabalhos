@@ -1,0 +1,36 @@
+/Desenvolver um programa que receba duas notas
+//e através do uso de ponteiros, faça a média
+//desses valores e apresente o resultado através de
+//um ponteiro.
+
+
+#include <stdio.h>
+#include <math.h>
+#include <locale.h>
+
+int main(){
+		setlocale(LC_ALL, "Portuguese");
+		
+	float num;
+	float dem;
+	
+	float *p1;
+	float *p2;
+	float *p3;
+	
+	printf("\nDigite a primeira nota: ");
+	scanf("%f",&num);
+	
+	printf("\nDigite a segunda nota: ");
+	scanf("%f",&dem);
+
+	p1 = num+dem;
+	
+	
+	
+	**p3 = &p1+&p2;
+	
+	printf("\nA MEDIA DAS NOTAS É: %f",*p3);
+	
+return (0);
+}
