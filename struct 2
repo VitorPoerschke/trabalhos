@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct dadoscad{
+	char nome[30];
+	int idade;
+	char sexo;
+}cadastro[10];
+
+int main() {
+	int i, j;
+	char pesquisa;
+	//Inicializando as variáveis	
+	for(i=0; i<10; i++){
+		for(j=0; j<30; j++){
+			cadastro[i].nome[j]=' ';	
+		}
+		cadastro[i].idade=0;
+		cadastro[i].sexo=' ';
+	}
+	//Entrada de dados
+	for(i=0; i<3; i++){
+		printf("\n\nInforme o %do nome: ", i+1);
+		gets(cadastro[i].nome);
+		printf("Informe a idade: ");
+		scanf("%d", &cadastro[i].idade);
+		fflush(stdin);
+		//Valida o sexo informado
+		do{
+			printf("Informe o sexo (M / F): ");
+			scanf("%c", &cadastro[i].sexo);
+			strupr(&cadastro[i].sexo);
+			fflush(stdin);
+		}while(cadastro[i].sexo != 'M' && cadastro[i].sexo != 'F');
+	}
+	//Valida o sexo informado na pesquisa
+	do{
+		printf("\n\nInforme o sexo a pesquisar (M / F): ");
+		scanf("%c", &pesquisa);
+		printf("\n\nIniciando a pesquisa.....\n\n");
+		strupr(&pesquisa);
+		fflush(stdin);
+	}while(pesquisa != 'M' && pesquisa != 'F');
+	
+	if(pesquisa == 'M'){
+		printf("\n *** SEXO MASCULINO ***");
+	}else{
+		printf("\n *** SEXO FEMININO ***");
+	}
+	//Compara o sexo pesquisado com o cadastro e retorna os respectivos nomes
+	for(i=0; i<3; i++){
+		if(pesquisa==cadastro[i].sexo){
+			printf("\n\n%do registro, Sr(a).: %s", i+1, cadastro[i].nome);
+		}
+	}
+	
+	printf("\n\n");
+	system("pause");	
+	return (0);
+}
